@@ -1,0 +1,87 @@
+<?php
+
+$fullName = "Mohamad Al Jamal"; // string
+$age = 37; // integer
+$jobTitle = "IT"; // string
+$city = "Damascus"; // string
+$yearsOfExperience = 3; // integer
+$hasDrivingLicense = true; // boolean
+$skill1 = "HTML"; // string
+$skill2 = "CSS"; // string
+$skill3 = "JavaScript"; // string
+$skill4 = "TypeScript"; // string
+$skill5 = "Node.js"; // string
+$avatarURL = "https://avatars.githubusercontent.com/u/29816042?s=400&u=24515239f5182320e67cf29b356156dc62741bc9&v=4"; // string (URL)
+$date = date("Y-m-d"); // string (current date)
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Profile Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 400px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .avatar {
+      width: 120px;
+      border-radius: 50%;
+    }
+    .info {
+      text-align: left;
+      margin-top: 20px;
+    }
+    .info p {
+      margin: 5px 0;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .skill {
+      background-color: #007bff;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+       <img src="<?= $avatarURL ?>" alt="Avatar" class="avatar">
+    <h2><?= $fullName ?> <small>(<?= gettype($fullName) ?>)</small></h2>
+    <div class="info">
+      <p><strong>Age:</strong> <?= $age ?> <small>(<?= gettype($age) ?>)</small></p>
+      <p><strong>Job Title:</strong> <?= $jobTitle ?> <small>(<?= gettype($jobTitle) ?>)</small></p>
+      <p><strong>City:</strong> <?= $city ?> <small>(<?= gettype($city) ?>)</small></p>
+      <p><strong>Years of Experience:</strong> <?= $yearsOfExperience ?> <small>(<?= gettype($yearsOfExperience) ?>)</small></p>
+      <p><strong>Has Driving License:</strong> <?= $hasDrivingLicense ? "Yes" : "No" ?> <small>(<?= gettype($hasDrivingLicense) ?>)</small></p>
+      <p><strong>Skills:</strong></p>
+      <div class="skills">
+        <span class="skill"><?= htmlspecialchars($skill1) ?> <small>(<?= gettype($skill1) ?>)</small></span>
+        <span class="skill"><?= htmlspecialchars($skill2) ?> <small>(<?= gettype($skill2) ?>)</small></span>
+        <span class="skill"><?= htmlspecialchars($skill3) ?> <small>(<?= gettype($skill3) ?>)</small></span>
+        <span class="skill"><?= htmlspecialchars($skill4) ?> <small>(<?= gettype($skill4) ?>)</small></span>
+        <span class="skill"><?= htmlspecialchars($skill5) ?> <small>(<?= gettype($skill5) ?>)</small></span>
+      </div>
+      <p><strong>Date:</strong> <?= $date ?> <small>(<?= gettype($date) ?>)</small></p>
+    </div>
+  </div>
+</body>
+</html>
